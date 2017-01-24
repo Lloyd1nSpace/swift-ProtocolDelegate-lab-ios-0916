@@ -8,39 +8,52 @@
 
 import UIKit
 
-
-// TODO: Create protocol here.
-
+// MARK: Emoji protocol
+protocol EmojiCreation {
+    func create(emojiGroup: (String, String))
+}
 
 class ShoppingViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var emojis: [(String, String)] = []
+    var emojis: [(String, String)] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(red:0.75, green:0.18, blue:0.27, alpha:1.00)
-        tableView.backgroundColor = UIColor(red:0.85, green:0.37, blue:0.29, alpha:1.0)
+        viewCustomizations()
+    }
+    
+    func viewCustomizations() {
+        view.backgroundColor = Constants.viewBackgroundColor
+        tableView.backgroundColor = Constants.listBackgroundColor
         tableView.delegate = self
         tableView.dataSource = self
         tableView.allowsSelection = false
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.identifier == Constants.segueID ? segue.destination as? EmojiSelectionViewController : nil
+        dest?.emojiDelegate = self
     }
     
 }
 
 // MARK: - UITableViewDataSource Methods
 extension ShoppingViewController: UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return emojis.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EmojiCell", for: indexPath) as! EmojiCellTableViewCell
-        let currentEmojiLove = emojis[(indexPath as NSIndexPath).row]
-        cell.firstEmojiLabel.text = currentEmojiLove.0
-        cell.secondEmojiLabel.text = currentEmojiLove.1
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellID, for: indexPath) as! EmojiCellTableViewCell
+        cell.firstEmojiLabel.text = emojis[indexPath.row].0
+        cell.secondEmojiLabel.text = emojis[indexPath.row].1
+        cell.backgroundColor = Constants.listBackgroundColor
         return cell
     }
 }
@@ -48,6 +61,11 @@ extension ShoppingViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate Methods
 extension ShoppingViewController: UITableViewDelegate { }
 
-
+// MARK: - Protocol Extension
+extension ShoppingViewController: EmojiCreation {
+    func create(emojiGroup: (String, String)) {
+        emojis.append(emojiGroup)
+    }
+}
 
 

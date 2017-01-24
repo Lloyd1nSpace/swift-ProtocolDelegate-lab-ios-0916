@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6ED6167A1E37B7B10033362E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED616791E37B7B10033362E /* Constants.swift */; };
 		7DADE3181D3FC16800792225 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DADE3171D3FC16800792225 /* AppDelegate.swift */; };
 		7DADE31D1D3FC16800792225 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DADE31B1D3FC16800792225 /* Main.storyboard */; };
 		7DADE31F1D3FC16800792225 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DADE31E1D3FC16800792225 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6ED616791E37B7B10033362E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7DADE3141D3FC16800792225 /* ShoppingCart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingCart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DADE3171D3FC16800792225 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DADE31C1D3FC16800792225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				7DADE31B1D3FC16800792225 /* Main.storyboard */,
+				6ED616791E37B7B10033362E /* Constants.swift */,
 				7DDBFF4E1D5B76C80023149C /* ShoppingListViewController.swift */,
 				7DFD61AF1D5BA195000ACBE8 /* EmojiSelectionViewController.swift */,
 				7DDBFF501D5B7B6C0023149C /* EmojiCellTableViewCell.swift */,
@@ -105,7 +108,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Gamesmith, LLC";
 				TargetAttributes = {
 					7DADE3131D3FC16800792225 = {
@@ -150,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6ED6167A1E37B7B10033362E /* Constants.swift in Sources */,
 				7DDBFF511D5B7B6C0023149C /* EmojiCellTableViewCell.swift in Sources */,
 				7DADE3181D3FC16800792225 /* AppDelegate.swift in Sources */,
 				7DFD61B01D5BA195000ACBE8 /* EmojiSelectionViewController.swift in Sources */,
@@ -193,8 +197,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -238,8 +244,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -258,6 +266,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
